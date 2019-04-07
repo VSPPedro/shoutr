@@ -10,6 +10,7 @@ class LikesController < ApplicationController
     current_user.unlike(shout)
     redirect_to root_path
   end
+
   private
 
   def shout
