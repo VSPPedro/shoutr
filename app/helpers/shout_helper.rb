@@ -15,6 +15,9 @@ module ShoutHelper
   end
 
   def autolink(text)
-    text.gsub(/@\w+/) { |metion| link_to metion, user_path(metion[1..-1]) }.html_safe
+    text.
+      gsub(/@\w+/) { |metion| link_to metion, user_path(metion[1..-1]) }.
+      gsub(/#\w+/) { |hashtag| link_to hashtag, hashtag_path(hashtag[1..-1]) }.
+      html_safe
   end
 end
